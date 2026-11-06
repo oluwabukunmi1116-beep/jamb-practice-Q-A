@@ -1,0 +1,126 @@
+:root {
+	color-scheme: light;
+	--paper: #f4f1e8;
+	--ink: #20231e;
+	--muted: #77786e;
+	--line: #dedbd1;
+	--green: #245c45;
+	--green-dark: #194733;
+	--lime: #d3ef74;
+	--coral: #e2765a;
+	--white: #fffefa;
+	font-family: "DM Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--paper); }
+button, select { font: inherit; }
+button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.topbar { height: 72px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 max(6.4vw, 24px); }
+.wordmark { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 600; }
+.wordmark b { font-weight: 500; }
+.mark { display: grid; place-items: center; width: 30px; height: 30px; color: var(--lime); background: var(--green); font-size: 19px; font-weight: 700; }
+.top-note, .eyebrow, .rail-heading, .crumb, .year-picker, .progress-row, .question-year, .quiz-footer, .disclaimer { font-family: "DM Mono", monospace; letter-spacing: 0; }
+.top-note { color: var(--muted); font-size: 10px; display: flex; align-items: center; gap: 9px; }
+.live-dot, .footer-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; background: var(--coral); }
+main { max-width: 1280px; margin: auto; padding: 0 6.4vw 30px; }
+.intro { min-height: 260px; position: relative; display: flex; align-items: center; justify-content: space-between; padding: 42px 2px 38px; overflow: hidden; }
+.intro::after { content: ""; position: absolute; width: 260px; height: 1px; background: var(--coral); right: 12%; top: 62px; transform: rotate(-42deg); transform-origin: right; opacity: .7; }
+.intro-copy { position: relative; z-index: 1; }
+.eyebrow { color: var(--green); font-size: 10px; font-weight: 500; margin: 0 0 12px; }
+h1 { font-family: "Space Grotesk", sans-serif; font-size: clamp(42px, 5vw, 62px); line-height: .98; letter-spacing: 0; margin: 0; font-weight: 600; }
+h1 span { color: var(--green); }
+.lede { color: #65665e; max-width: 420px; line-height: 1.65; font-size: 14px; margin: 15px 0 0; }
+.year-stamp { display: flex; align-items: center; gap: 12px; margin-right: 7%; position: relative; z-index: 1; }
+.year-stamp span { font-family: "Space Grotesk", sans-serif; color: var(--coral); font-weight: 600; font-size: 78px; line-height: .8; }
+.year-stamp small { color: var(--muted); font: 10px/1.5 "DM Mono", monospace; }
+.year-stamp i { position: absolute; font-style: normal; color: var(--green); font-size: 22px; right: -37px; bottom: -7px; }
+.workspace { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 530px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.rail { display: flex; flex-direction: column; border-right: 1px solid var(--line); padding: 25px 24px 23px 0; }
+.rail-heading { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; }
+.rail-heading span { color: var(--coral); font-size: 10px; }
+.rail-heading h2 { font: 500 10px "DM Mono", monospace; letter-spacing: 0; margin: 0; }
+.subject-list { display: grid; gap: 4px; }
+.subject-button { appearance: none; border: 0; background: transparent; padding: 12px 10px; display: flex; align-items: center; gap: 12px; color: #5f6058; text-align: left; cursor: pointer; font-size: 14px; transition: background .18s, color .18s; }
+.subject-button:hover { background: #e9e7dd; color: var(--ink); }
+.subject-button.active { background: var(--green); color: var(--white); }
+.subject-icon { width: 20px; color: var(--coral); font-family: "Space Grotesk", sans-serif; font-size: 17px; font-weight: 600; text-align: center; }
+.subject-button.active .subject-icon { color: var(--lime); }
+.subject-arrow { margin-left: auto; opacity: 0; }
+.subject-button.active .subject-arrow { opacity: 1; }
+.rail-bottom { margin-top: auto; padding: 32px 10px 0; }
+.tiny-rule { display: block; width: 26px; height: 2px; background: var(--coral); }
+.rail-bottom p { color: var(--muted); font-size: 11px; line-height: 1.65; margin: 11px 0 0; }
+.quiz-panel { padding: 22px 0 0 40px; min-width: 0; }
+.quiz-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.crumb { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 10px; }
+.crumb span:first-child { color: var(--green); font-weight: 500; }
+.slash { color: #b6b3a9; }
+.year-picker { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 10px; }
+.year-picker select { appearance: none; background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: 0; padding: 8px 26px 8px 10px; font: 12px "DM Mono", monospace; cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--green) 50%), linear-gradient(135deg, var(--green) 50%, transparent 50%); background-position: calc(100% - 13px) 13px, calc(100% - 9px) 13px; background-size: 4px 4px, 4px 4px; background-repeat: no-repeat; }
+.progress-row { margin-top: 34px; display: grid; grid-template-columns: auto auto minmax(70px, 1fr); align-items: center; gap: 10px; color: var(--muted); font-size: 9px; }
+.progress-row span:first-child { color: var(--ink); }
+.progress-track { height: 2px; background: var(--line); margin-left: 9px; }
+.progress-track span { display: block; width: 6.25%; height: 100%; background: var(--coral); transition: width .3s ease; }
+.question-card { max-width: 780px; padding: 37px 0 24px; animation: appear .28s ease both; }
+.question-meta { display: flex; align-items: center; gap: 11px; }
+.question-number { display: grid; place-items: center; width: 31px; height: 31px; background: var(--lime); color: var(--green-dark); font: 500 12px "DM Mono", monospace; }
+.question-year { color: var(--muted); font-size: 9px; }
+.question-card h2 { font: 500 clamp(20px, 2.3vw, 27px)/1.4 "Space Grotesk", sans-serif; letter-spacing: 0; margin: 21px 0 22px; max-width: 700px; }
+.options { display: grid; gap: 9px; }
+.option { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 48px; padding: 9px 13px; border: 1px solid var(--line); background: var(--white); color: var(--ink); text-align: left; cursor: pointer; font-size: 13px; line-height: 1.45; transition: border-color .16s, background .16s; }
+.option:hover { border-color: var(--green); }
+.option .letter { display: grid; place-items: center; flex: 0 0 24px; height: 24px; border: 1px solid var(--line); color: var(--muted); font: 10px "DM Mono", monospace; }
+.option.selected { border-color: var(--green); background: #edf2e8; }
+.option.selected .letter { border-color: var(--green); background: var(--green); color: white; }
+.option.correct { border-color: var(--green); background: #e7f0e5; }
+.option.correct .letter { border-color: var(--green); background: var(--green); color: white; }
+.option.incorrect { border-color: var(--coral); background: #fbefeb; }
+.option.incorrect .letter { border-color: var(--coral); background: var(--coral); color: white; }
+.option:disabled { cursor: default; }
+.feedback { margin-top: 14px; padding: 13px 15px; border-left: 3px solid var(--green); background: #e9eee4; color: #364438; font-size: 12px; line-height: 1.6; }
+.feedback.wrong { border-color: var(--coral); background: #f7e9e4; color: #573d35; }
+.quiz-actions { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+.check-button { display: inline-flex; gap: 22px; align-items: center; border: 0; padding: 12px 16px; background: var(--green); color: white; cursor: pointer; font-size: 12px; font-weight: 600; transition: background .15s; }
+.check-button:hover { background: var(--green-dark); }
+.check-button span { color: var(--lime); font-size: 16px; }
+.next-button { width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 20px; color: var(--ink); transition: background .15s, border-color .15s; }
+.next-button:hover { background: var(--lime); border-color: var(--lime); }
+.quiz-footer { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding: 16px 0 14px; color: var(--muted); font-size: 9px; }
+.quiz-footer span:first-child { display: flex; align-items: center; gap: 7px; }
+.footer-dot { width: 6px; height: 6px; background: var(--green); }
+.disclaimer { text-align: right; color: #8a897f; font-size: 9px; margin: 14px 0 0; }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 12px); padding: 10px 15px; background: var(--ink); color: white; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) {
+	.topbar { height: 60px; padding: 0 20px; }
+	.top-note { font-size: 8px; }
+	main { padding: 0 20px 24px; }
+	.intro { min-height: 235px; padding: 34px 0; }
+	h1 { font-size: 48px; }
+	.lede { max-width: 330px; font-size: 13px; }
+	.year-stamp { position: absolute; right: 20px; bottom: 37px; margin: 0; gap: 7px; }
+	.year-stamp span { font-size: 52px; }
+	.year-stamp small { font-size: 8px; }
+	.year-stamp i, .intro::after { display: none; }
+	.workspace { grid-template-columns: 1fr; }
+	.rail { border-right: 0; border-bottom: 1px solid var(--line); padding: 17px 0 14px; }
+	.rail-heading { margin-bottom: 10px; }
+	.subject-list { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+	.subject-button { justify-content: center; flex-direction: column; gap: 3px; padding: 8px 3px; min-height: 57px; font-size: 10px; }
+	.subject-icon { height: 20px; }
+	.subject-arrow, .rail-bottom { display: none; }
+	.quiz-panel { padding: 18px 0 0; }
+	.progress-row { margin-top: 23px; }
+	.question-card { padding-top: 26px; }
+	.question-card h2 { font-size: 22px; }
+	.quiz-footer { font-size: 8px; }
+}
+@media (max-width: 390px) {
+	.top-note { max-width: 98px; text-align: right; line-height: 1.4; }
+	.subject-button { font-size: 9px; }
+	.crumb { font-size: 9px; gap: 6px; }
+	.year-picker { font-size: 9px; gap: 5px; }
+	.year-picker select { padding: 7px 21px 7px 6px; font-size: 11px; }
+}

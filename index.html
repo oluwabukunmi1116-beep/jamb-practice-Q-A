@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f4f1e8">
+	<title>JAMB Practice Room</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header class="topbar">
+		<a class="wordmark" href="#" aria-label="JAMB Practice Room home"><span class="mark">J</span><span>JAMB <b>Practice Room</b></span></a>
+		<div class="top-note"><span class="live-dot"></span> YOUR DAILY STUDY SESSION</div>
+	</header>
+
+	<main>
+		<section class="intro" aria-labelledby="page-title">
+			<div class="intro-copy">
+				<p class="eyebrow">2010 — 2025 / FIVE SUBJECTS</p>
+				<h1 id="page-title">Practice makes<br><span>progress.</span></h1>
+				<p class="lede">A focused question room for your next big step. Choose a subject, pick a year, and get to work.</p>
+			</div>
+			<div class="year-stamp" aria-label="Sixteen years of practice material"><span>16</span><small>YEARS<br>OF PRACTICE</small><i>↘</i></div>
+		</section>
+
+		<section class="workspace" aria-label="Question practice">
+			<aside class="rail">
+				<div class="rail-heading"><span>01</span><h2>SUBJECT</h2></div>
+				<nav class="subject-list" aria-label="Choose a subject">
+					<button class="subject-button active" data-subject="Physics"><span class="subject-icon">ϟ</span>Physics<span class="subject-arrow">↗</span></button>
+					<button class="subject-button" data-subject="Chemistry"><span class="subject-icon">◉</span>Chemistry<span class="subject-arrow">↗</span></button>
+					<button class="subject-button" data-subject="Biology"><span class="subject-icon">✳</span>Biology<span class="subject-arrow">↗</span></button>
+					<button class="subject-button" data-subject="Mathematics"><span class="subject-icon">∑</span>Mathematics<span class="subject-arrow">↗</span></button>
+					<button class="subject-button" data-subject="English"><span class="subject-icon">Aa</span>English<span class="subject-arrow">↗</span></button>
+				</nav>
+				<div class="rail-bottom"><span class="tiny-rule"></span><p>Original practice questions<br>in the JAMB style.</p></div>
+			</aside>
+
+			<section class="quiz-panel" aria-live="polite">
+				<div class="quiz-toolbar">
+					<div class="crumb"><span id="current-subject">PHYSICS</span><span class="slash">/</span><span>PRACTICE SET</span></div>
+					<label class="year-picker">YEAR <select id="year-select" aria-label="Choose a year"></select></label>
+				</div>
+				<div class="progress-row"><span id="progress-label">QUESTION 01</span><span id="question-total">OF 16</span><div class="progress-track"><span id="progress-fill"></span></div></div>
+				<article class="question-card">
+					<div class="question-meta"><span class="question-number" id="question-number">01</span><span class="question-year" id="question-year">2010 SET</span></div>
+					<h2 id="question-text"></h2>
+					<div class="options" id="options" role="group" aria-label="Answer options"></div>
+					<div class="feedback" id="feedback" role="status" hidden></div>
+					<div class="quiz-actions"><button class="check-button" id="check-button" type="button">Check answer <span>↗</span></button><button class="next-button" id="next-button" type="button" aria-label="Next question" title="Next question">→</button></div>
+				</article>
+				<footer class="quiz-footer"><span><i class="footer-dot"></i> TAKE YOUR TIME</span><span id="set-count">16 QUESTIONS IN THIS SET</span></footer>
+			</section>
+		</section>
+		<p class="disclaimer">These are original JAMB-style practice questions, not official examination past questions.</p>
+	</main>
+
+	<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
